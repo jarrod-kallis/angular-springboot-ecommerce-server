@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.luv2code.ecommerce.entity.ProductCategory;
 
 @CrossOrigin({ "http://localhost:4200" })
-// The reason we specific this is because JPA will automatically add an 's' to the path, which we don't want
+// The reason we specify this is because JPA will automatically add an 's' to the path, which we don't want
 //                                              Name of JSON entry, /product-category
 //                                              when visiting /api
 // productCategory": {
