@@ -27,3 +27,12 @@ You can write your own queries if you don't like the idea of "MAGIC" queries:</b
 [Query Method section in Spring Data Reference Manual](http://www.luv2code.com/spring-data-query-methods)
 
 Spring Data REST automatically exposes endpoints for query methods: `/search/findByCategoryId`</br>
+
+## Lombok is a bitch
+
+1. Download Lombok JAR <br/>
+[https://projectlombok.org/downloads/lombok.jar](https://projectlombok.org/downloads/lombok.jar)
+
+2. Run `java -jar lombok.jar`
+
+3. Select the Eclipse installation - nothing else to do
