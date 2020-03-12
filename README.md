@@ -36,3 +36,5 @@ Spring Data REST automatically exposes endpoints for query methods: `/search/fin
 2. Run `java -jar lombok.jar`
 
 3. Select the Eclipse installation - nothing else to do
+
+## Spring Data Rest provides support for Pagination out of the box
