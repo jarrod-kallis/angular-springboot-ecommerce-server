@@ -38,3 +38,4 @@ Spring Data REST automatically exposes endpoints for query methods: `/search/fin
 3. Select the Eclipse installation - nothing else to do
 
 ## Spring Data Rest provides support for Pagination out of the box
+[http://www.luv2code.com/spring-data-rest-pagination](http://www.luv2code.com/spring-data-rest-pagination)
