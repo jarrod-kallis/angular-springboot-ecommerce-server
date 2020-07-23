@@ -39,3 +39,19 @@ Spring Data REST automatically exposes endpoints for query methods: `/search/fin
 
 ## Spring Data Rest provides support for Pagination out of the box
 [http://www.luv2code.com/spring-data-rest-pagination](http://www.luv2code.com/spring-data-rest-pagination)
+
+## MySQL Workbench
+
+### Setup
+![MySQL Workbench Setup](README_images/01-MySQL-Workbench-Setup.png)
+
+### Users
+#### root
+I think the password is root
+![Root User](README_images/02-MySQL-Workbench-User-root.png)
+
+#### ecommerceapp
+![ECommerceApp User](README_images/03-MySQL-Workbench-User-ecommerceapp.png)
+
+### Schema
+![Schema](README_images/04-MySQL-Workbench-Schema.png)

@@ -15,8 +15,10 @@ import org.springframework.data.rest.core.mapping.ResourceMetadata;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
 
+import com.luv2code.ecommerce.entity.Country;
 import com.luv2code.ecommerce.entity.Product;
 import com.luv2code.ecommerce.entity.ProductCategory;
+import com.luv2code.ecommerce.entity.State;
 
 @Configuration
 public class DataRestConfig implements RepositoryRestConfigurer {
@@ -31,23 +33,23 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-		HttpMethod[] unsupportedActions = { HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE };
-
-		// Disable certain REST actions for Product
-		config.getExposureConfiguration().forDomainType(Product.class)
-				.withItemExposure(
-						(metadata, httpMethods) -> disableHttpMethods(metadata, httpMethods, unsupportedActions))
-				.withCollectionExposure(
-						(metadata, httpMethods) -> disableHttpMethods(metadata, httpMethods, unsupportedActions));
-
-		// Disable certain REST actions for Product Category
-		config.getExposureConfiguration().forDomainType(ProductCategory.class)
-				.withItemExposure(
-						(metadata, httpMethods) -> disableHttpMethods(metadata, httpMethods, unsupportedActions))
-				.withCollectionExposure(
-						(metadata, httpMethods) -> disableHttpMethods(metadata, httpMethods, unsupportedActions));
+		disableHttpMethods(config, Product.class);
+		disableHttpMethods(config, ProductCategory.class);
+		disableHttpMethods(config, Country.class);
+		disableHttpMethods(config, State.class);
 
 		exposeIds(config);
+	}
+
+	// Disable certain REST actions for Product
+	private void disableHttpMethods(RepositoryRestConfiguration config, Class<?> theClass) {
+		HttpMethod[] unsupportedActions = { HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE };
+
+		config.getExposureConfiguration().forDomainType(theClass)
+				.withItemExposure(
+						(metadata, httpMethods) -> disableHttpMethods(metadata, httpMethods, unsupportedActions))
+				.withCollectionExposure(
+						(metadata, httpMethods) -> disableHttpMethods(metadata, httpMethods, unsupportedActions));
 	}
 
 	private ConfigurableHttpMethods disableHttpMethods(ResourceMetadata metadata, ConfigurableHttpMethods httpMethods,
